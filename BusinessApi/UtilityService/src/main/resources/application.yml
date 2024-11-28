@@ -1,0 +1,37 @@
+server:
+  port: 9101
+
+spring:
+  security:
+    user:
+      name: admin
+      password: 1234
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java14user
+    password: root
+  mail:
+    username: aslihanmertjava@gmail.com
+    password: zomp debx xzvv vbok
+    host: smtp.gmail.com
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/UtilDB
+    username: postgres
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+auth:
+  secret:
+    secret-key: ${JAVA_14_SECRET_KEY}
+    issuer: ${JAVA_14_ISSUER}

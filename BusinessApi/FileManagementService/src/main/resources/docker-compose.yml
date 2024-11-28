@@ -1,0 +1,11 @@
+
+services:
+  hk-s3:
+    image: minio/minio:RELEASE.2024-09-22T00-33-43Z
+    ports:
+      - "9001:9000"  
+      - "9002:9001"
+    environment:
+      MINIO_ROOT_USER: java14-user
+      MINIO_ROOT_PASSWORD: java14-password
+    command: server /data --console-address ":9001"

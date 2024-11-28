@@ -1,0 +1,26 @@
+server:
+  port: 9096
+spring:
+  main:
+    allow-circular-references: true
+  security:
+    user:
+      name: admin
+      password: 1234
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java14user
+    password: root
+  datasource:
+    url: jdbc:postgresql://localhost:5432/HRMDB
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+auth:
+  secret:
+    secret-key: ${JAVA_14_SECRET_KEY}
+    issuer: ${JAVA_14_ISSUER}

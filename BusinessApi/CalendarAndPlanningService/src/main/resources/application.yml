@@ -1,0 +1,23 @@
+server:
+  port: 9087
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java14user
+    password: root
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/calendarDB
+    username: postgres
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+CPM_management:
+  secret:
+    secret-key: ${JAVA_14_SECRET_KEY}
+    issuer: ${JAVA_14_ISSUER}

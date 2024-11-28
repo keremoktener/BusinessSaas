@@ -1,0 +1,24 @@
+server:
+  port: 9090
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java14user
+    password: root
+  datasource:
+    url: jdbc:postgresql://localhost:5432/authDB
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+auth:
+  secret:
+    secret-key: ${JAVA_14_SECRET_KEY:defaultSecretKey}
+    issuer: ${JAVA_14_ISSUER:defaultIssuer}

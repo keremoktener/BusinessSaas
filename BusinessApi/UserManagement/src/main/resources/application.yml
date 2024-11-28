@@ -1,0 +1,25 @@
+server:
+  port: ${SERVER_PORT:9097}
+
+spring:
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:java14user}
+    password: ${RABBITMQ_PASSWORD:root}
+
+  datasource:
+    driver-class-name: ${DB_DRIVER:org.postgresql.Driver}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/userDB}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:1234}
+
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_DDL_AUTO:create}
+    show-sql: ${JPA_SHOW_SQL:true}
+
+usermanagement:
+  secret:
+    secret-key: ${JAVA_14_SECRET_KEY:defaultSecretKey}
+    issuer: ${JAVA_14_ISSUER:defaultIssuer}

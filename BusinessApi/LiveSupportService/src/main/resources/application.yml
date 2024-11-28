@@ -1,0 +1,24 @@
+server:
+  port: 9088
+spring:
+  rabbitmq:
+    host: ${RABBITMQ_URL:localhost}
+    port: 5672
+    username: ${RABBITMQ_USERNAME:java14user}
+    password: ${RABBITMQ_PASSWORD:root}
+  datasource:
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/livesupportDB}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASS:1234}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+auth:
+  secret:
+    secret-key: ${JAVA_14_SECRET_KEY}
+    issuer: ${JAVA_14_ISSUER}

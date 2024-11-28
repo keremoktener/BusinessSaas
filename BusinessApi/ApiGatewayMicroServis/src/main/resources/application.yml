@@ -1,0 +1,148 @@
+server:
+  port: 80
+
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: auth
+          uri: http://localhost:9090/
+          predicates:
+            - Path=/dev/v1/auth/**
+        - id: crm
+          uri: http://localhost:9098/
+          predicates:
+            - Path=/dev/v1/customer/**
+        - id: stock
+          uri: http://localhost:9099
+          predicates:
+            - Path=/dev/v1/order/**
+        - id: stock
+          uri: http://localhost:9099
+          predicates:
+            - Path=/dev/v1/product-category/**
+        - id: stock
+          uri: http://localhost:9099
+          predicates:
+            - Path=/dev/v1/product/**
+        - id: stock
+          uri: http://localhost:9099
+          predicates:
+            - Path=/dev/v1/stock-movement/**
+        - id: stock
+          uri: http://localhost:9099
+          predicates:
+            - Path=/dev/v1/supplier/**
+        - id: stock
+          uri: http://localhost:9099
+          predicates:
+            - Path=/dev/v1/ware-house/**
+        - id: userManagement
+          uri: http://localhost:9097
+          predicates:
+            - Path=/dev/v1/role/**
+        - id: analytics
+          uri: http://localhost:9098
+          predicates:
+            - Path=/api/dashboards/**
+        - id: analytics
+          uri: http://localhost:9098
+          predicates:
+            - Path=/api/dataSources/**
+        - id: analytics
+          uri: http://localhost:9098
+          predicates:
+            - Path=/api/finances/**
+        - id: analytics
+          uri: http://localhost:9098
+          predicates:
+            - Path=/api/kpis/**
+        - id: analytics
+          uri: http://localhost:9098
+          predicates:
+            - Path=/api/reports/**
+        - id: analytics
+          uri: http://localhost:9098
+          predicates:
+            - Path=/api/stocks/**
+        - id: analytics
+          uri: http://localhost:9098
+          predicates:
+            - Path=/api/widgets/**
+        - id: hrm
+          uri: http://localhost:9096
+          predicates:
+            - Path=/dev/v1/attendance/**
+        - id: hrm
+          uri: http://localhost:9096
+          predicates:
+            - Path=/dev/v1/benefit/**
+        - id: hrm
+          uri: http://localhost:9096
+          predicates:
+            - Path=/dev/v1/employee/**
+        - id: hrm
+          uri: http://localhost:9096
+          predicates:
+            - Path=/dev/v1/payroll/**
+        - id: hrm
+          uri: http://localhost:9096
+          predicates:
+            - Path=/dev/v1/performance/**
+        - id: notification
+          uri: http://localhost:9095
+          predicates:
+            - Path=/api/notifications/**
+        - id: notification
+          uri: http://localhost:9095
+          predicates:
+            - Path=/api/notify/**
+        - id: projectManagement
+          uri: http://localhost:8095
+          predicates:
+            - Path=/dev/v1/project/**
+        - id: projectManagement
+          uri: http://localhost:8095
+          predicates:
+            - Path=/dev/v1/task/**
+        - id: userManagement
+          uri: http://localhost:9097
+          predicates:
+            - Path=/dev/v1/role/**
+        - id: userManagement
+          uri: http://localhost:9097
+          predicates:
+            - Path=/dev/v1/user/**
+        - id: calendarAndPlanning
+          uri: http://localhost:9093
+          predicates:
+            - Path=/dev/v1/event/**
+        - id: fileManagement
+          uri: http://localhost:9099
+          predicates:
+            - Path=/dev/v1/file/**
+        - id: subscription
+          uri: http://localhost:9091
+          predicates:
+            - Path=/dev/v1/subscription/plan/**
+        - id: subscription
+          uri: http://localhost:9091
+          predicates:
+            - Path=/dev/v1/subscription/**
+        - id: organization
+          uri: http://localhost:9100
+          predicates:
+            - Path=/dev/v1/organization-management/department**
+        - id: organization
+          uri: http://localhost:9100
+          predicates:
+            - Path=/dev/v1/organization-management/employee/**
+
+
+
+
+
+
+

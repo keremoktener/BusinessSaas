@@ -1,0 +1,25 @@
+server:
+  port: 9089
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java14user
+    password: root
+  security:
+    user:
+      name: admin
+      password: 1234
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/FinanceDB
+    username: postgres
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+finance:
+  secret:
+    secret-key: ${JAVA_14_SECRET_KEY:defaultSecretKey}
+    issuer: ${JAVA_14_ISSUER:defaultIssuer}

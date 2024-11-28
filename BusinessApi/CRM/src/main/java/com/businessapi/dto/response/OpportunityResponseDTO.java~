@@ -1,0 +1,13 @@
+package com.businessapi.dto.response;
+
+public record OpportunityResponseDTO(
+
+    Long id,
+    String firstName,
+    String lastName
+
+
+){
+
+}
+

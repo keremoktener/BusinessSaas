@@ -1,0 +1,26 @@
+server:
+  port: 9092
+
+spring:
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java14user
+    password: root
+  mail:
+    username: aslihanmertjava@gmail.com
+    password: zomp debx xzvv vbok
+    host: smtp.gmail.com
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+mail:
+  secret:
+    secret-key: ${JAVA_14_SECRET_KEY}
+    issuer: ${JAVA_14_ISSUER}
